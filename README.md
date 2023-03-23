@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @Sureshcitece
 - 👀 I’m interested in C++
 - 🌱 I’m currently learning Docker and Kubernetes
-- 📫 How to reach me sureshcitece@gmail.com
+- 📫 How to reach me suresh.govindhan@genesys.com
 
 <!---
 Sureshcitece/Sureshcitece is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
