@@ -1,26 +1,37 @@
 #include <stdio.h>
 
-int largest(int a[], int n){
-    int largest = a[0];
-    for(int i=0; i<n; i++){
-        if(a[i] > largest) largest=a[i];
+void selection_sort(int arr[], int n){
+    if (n <= 1)
+        return;
+    int largest = arr[0]; int largest_index = 0;
+    for(int i = 0; i < n ; i++){
+        if(arr[i] > largest) {
+            largest = arr[i];
+            largest_index = i;
+        }
     }
-    return largest;
-}
+    arr[largest_index] = arr[n-1];
+    arr[n-1] = largest;
 
-void selection_sort(int a[], int n){
-    a[0] = a[n-1];
-    a[n-1] = largest(a, n);
-    if (n > 0) selection_sort(a, n - 1);
+    selection_sort(arr, --n);
 }
 
 int main(void){
-    int i, n;
-    printf("Enter how many numbers you want to enter:");
+
+    int n;
+    printf("How many numbers do you want to enter? ");
     scanf("%d", &n);
-    int a[n];
-    printf("Enter numbers:");
-    for(i = 0; i < n; i++)
-        scanf("%d", &a[i]);
-    selection_sort(a, n);
+    int array[n];
+
+    printf("Enter %d integers:\n", n);
+    for(int i = 0; i < n; i++)
+        scanf("%d", &array[i]);
+
+    selection_sort(array, n);
+    
+    printf("Sorted array in ascending order:\n");
+    for(int i = 0; i < n; i++)
+        printf("%d ", array[i]);
+    printf("\n");
+    return 0;
 }
